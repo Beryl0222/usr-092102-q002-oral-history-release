@@ -1,0 +1,9 @@
+{
+  "event_id": "092102-002-sample-001",
+  "event_type": "CARRIER_ACCESSIONED",
+  "aggregate_type": "physical_carrier",
+  "aggregate_id": "oral_history_release-001",
+  "occurred_at": "2026-09-20T12:00:00+08:00",
+  "version": 1,
+  "summary": "抗联录音开放编目领域样例"
+}
