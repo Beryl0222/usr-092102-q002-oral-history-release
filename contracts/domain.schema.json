@@ -1,6 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.nlc.gov.cn/oral-history/domain.event.json",
   "title": "抗联录音开放编目领域事件",
+  "description": "所有事实以事件表达；event_id 全局唯一且永不复用。信封七字段保持稳定，事件具体内容置于 payload。降噪件等只能以 DERIVATIVE_RECORDED 溯源到原始采集，身份在有明确依据前只能保持候选。",
   "type": "object",
   "required": [
     "event_id",
@@ -14,24 +16,47 @@
   "properties": {
     "event_id": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "description": "全局唯一事件标识，稳定引用与版本解释均以此为据"
     },
     "event_type": {
       "type": "string",
       "enum": [
         "CARRIER_ACCESSIONED",
+        "DONATION_AGREEMENT_RECORDED",
+        "CARRIER_AGREEMENT_LINKED",
+        "CUSTODY_RECORD_FILED",
+        "DIGITIZATION_BATCH_RECORDED",
         "DIGITIZATION_VERIFIED",
-        "SPEAKER_ANNOTATED",
+        "DERIVATIVE_RECORDED",
+        "PERSON_REGISTERED",
+        "PERSON_ALIAS_NOTED",
+        "SEGMENT_CUT",
+        "SPEAKERS_PROPOSED",
+        "SPEAKER_CONFIRMED",
+        "TRANSCRIPT_DRAFTED",
+        "TRANSCRIPT_REVISED",
+        "REVIEW_NOTE_ADDED",
+        "SONG_RIGHTS_ASSESSED",
         "RELEASE_APPROVED",
-        "SEGMENT_WITHDRAWN"
+        "RELEASE_DECISION_AMENDED",
+        "SEGMENT_WITHDRAWN",
+        "SEGMENT_RESTORED"
       ]
     },
     "aggregate_type": {
       "type": "string",
       "enum": [
         "physical_carrier",
+        "donation_agreement",
+        "custody_record",
+        "digitization_batch",
+        "audio_file",
+        "person",
         "audio_segment",
         "transcript_revision",
+        "review_note",
+        "song_rights",
         "release_decision"
       ]
     },
@@ -45,11 +70,31 @@
     },
     "version": {
       "type": "integer",
-      "minimum": 1
+      "minimum": 1,
+      "description": "该聚合事件流内从 1 起的序号"
     },
     "summary": {
       "type": "string",
       "minLength": 1
+    },
+    "actor": {
+      "type": "object",
+      "description": "事件记录人及其岗位角色（cataloger/reviewer/rights_officer/release_officer 等）",
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "role": { "type": "string", "minLength": 1 },
+        "name": { "type": "string" }
+      },
+      "required": ["id", "role"],
+      "additionalProperties": true
+    },
+    "causation_id": {
+      "type": "string",
+      "description": "引发本事件的工单、申请或上游事件 id"
+    },
+    "payload": {
+      "type": "object",
+      "additionalProperties": true
     }
   },
   "additionalProperties": true

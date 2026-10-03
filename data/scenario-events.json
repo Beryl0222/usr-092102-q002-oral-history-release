@@ -1,0 +1,911 @@
+[
+  {
+    "event_id": "evt-da-07",
+    "event_type": "DONATION_AGREEMENT_RECORDED",
+    "aggregate_type": "donation_agreement",
+    "aggregate_id": "da-1986-07",
+    "occurred_at": "2026-10-03T01:09:54.494Z",
+    "version": 1,
+    "summary": "登记捐赠协议：捐赠字第1986-07号",
+    "actor": {
+      "id": "u-li",
+      "role": "rights_officer",
+      "name": "李权利"
+    },
+    "payload": {
+      "agreement_no": "捐赠字第1986-07号",
+      "donor": "李恒山",
+      "signed_on": "1986-07-10",
+      "scope_carrier_id": "tape-1986-kanglian-07",
+      "scope_segment_ids": [],
+      "restrictions": [
+        {
+          "code": "embargo_kin_consent",
+          "scope": "segments",
+          "segment_ids": [
+            "seg-07-04"
+          ],
+          "effect": "withhold",
+          "until": "2036-01-01",
+          "note": "片段涉及在台亲属，捐赠人书面要求三十年内暂缓公开"
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt-carrier-07",
+    "event_type": "CARRIER_ACCESSIONED",
+    "aggregate_type": "physical_carrier",
+    "aggregate_id": "tape-1986-kanglian-07",
+    "occurred_at": "2026-10-03T01:09:54.495Z",
+    "version": 1,
+    "summary": "入藏磁带：抗联老战士李恒山口述（1986年7月）",
+    "actor": {
+      "id": "u-zhao",
+      "role": "cataloger",
+      "name": "赵编目"
+    },
+    "payload": {
+      "title": "抗联老战士李恒山口述（1986年7月）",
+      "tape_no": "录音磁带-抗联-0007",
+      "media_type": "cassette",
+      "duration_ms": 1800000,
+      "recorded_on": "1986-07-15",
+      "original_location": "地下库三区七排四层（不公开）"
+    }
+  },
+  {
+    "event_id": "evt-link-07",
+    "event_type": "CARRIER_AGREEMENT_LINKED",
+    "aggregate_type": "physical_carrier",
+    "aggregate_id": "tape-1986-kanglian-07",
+    "occurred_at": "2026-10-03T01:09:54.495Z",
+    "version": 2,
+    "summary": "磁带 tape-1986-kanglian-07 关联捐赠协议 da-1986-07",
+    "actor": {
+      "id": "u-zhao",
+      "role": "cataloger",
+      "name": "赵编目"
+    },
+    "payload": {
+      "agreement_id": "da-1986-07"
+    }
+  },
+  {
+    "event_id": "evt-custody-07",
+    "event_type": "CUSTODY_RECORD_FILED",
+    "aggregate_type": "custody_record",
+    "aggregate_id": "cu-07-01",
+    "occurred_at": "2026-10-03T01:09:54.495Z",
+    "version": 1,
+    "summary": "载体保管记录：tape-1986-kanglian-07 @ 善本库 B3-12-04",
+    "actor": {
+      "id": "u-zhao",
+      "role": "cataloger",
+      "name": "赵编目"
+    },
+    "payload": {
+      "carrier_id": "tape-1986-kanglian-07",
+      "location_code": "善本库 B3-12-04",
+      "transferred_from": "老馆磁带柜",
+      "received_on": "2026-09-02",
+      "condition": "带基轻度老化，需低温保存",
+      "handler": "u-zhao"
+    }
+  },
+  {
+    "event_id": "evt-batch-07",
+    "event_type": "DIGITIZATION_BATCH_RECORDED",
+    "aggregate_type": "digitization_batch",
+    "aggregate_id": "batch-2026-0917",
+    "occurred_at": "2026-10-03T01:09:54.495Z",
+    "version": 1,
+    "summary": "数字化批次：DIG-2026-0917",
+    "actor": {
+      "id": "u-qian",
+      "role": "digitization_tech",
+      "name": "钱技术"
+    },
+    "payload": {
+      "batch_no": "DIG-2026-0917",
+      "digitized_on": "2026-09-17",
+      "operator": "u-qian",
+      "equipment": "Studer A721 / RME ADI-2",
+      "file_ids": [
+        "f-1986-07-original.wav"
+      ]
+    }
+  },
+  {
+    "event_id": "evt-verify-07",
+    "event_type": "DIGITIZATION_VERIFIED",
+    "aggregate_type": "digitization_batch",
+    "aggregate_id": "batch-2026-0917",
+    "occurred_at": "2026-10-03T01:09:54.495Z",
+    "version": 2,
+    "summary": "原始采集校验通过：f-1986-07-original.wav",
+    "actor": {
+      "id": "u-qian",
+      "role": "digitization_tech",
+      "name": "钱技术"
+    },
+    "payload": {
+      "file_id": "f-1986-07-original.wav",
+      "carrier_id": "tape-1986-kanglian-07",
+      "batch_id": "batch-2026-0917",
+      "codec": "pcm_s24le",
+      "sample_rate": 96000,
+      "channels": 2,
+      "byte_size": 1036800000,
+      "checksums": [
+        {
+          "algorithm": "sha512",
+          "value": "9f2c7a41b8d60e3a5c7f1d2b4e6a8c0f2d4b6e8a0c2f4d6b8e0a2c4f6d8b0e2a4c6e8a0b2d4f6c8e0a2b4d6f8c0e2a4b6d8f0c2e4a6b8d0f2c4e6a8b0d2f4c6e8a"
+        },
+        {
+          "algorithm": "md5",
+          "value": "3e1a2b4c6d8e0f2a4c6e8b0d2f4a6c8e"
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt-derivative-nr",
+    "event_type": "DERIVATIVE_RECORDED",
+    "aggregate_type": "audio_file",
+    "aggregate_id": "f-1986-07-denoise.wav",
+    "occurred_at": "2026-10-03T01:09:54.495Z",
+    "version": 1,
+    "summary": "派生文件（noise_reduced）：f-1986-07-denoise.wav ← f-1986-07-original.wav",
+    "actor": {
+      "id": "u-qian",
+      "role": "digitization_tech",
+      "name": "钱技术"
+    },
+    "payload": {
+      "source_file_id": "f-1986-07-original.wav",
+      "kind": "noise_reduced",
+      "process": "spectral-denoise-v3（不改变人声内容）",
+      "carrier_id": "tape-1986-kanglian-07",
+      "codec": "flac",
+      "byte_size": 520000000,
+      "checksums": [
+        {
+          "algorithm": "sha512",
+          "value": "a1b2c3d4e5f60718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f90"
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt-derivative-access",
+    "event_type": "DERIVATIVE_RECORDED",
+    "aggregate_type": "audio_file",
+    "aggregate_id": "f-1986-07-access.mp3",
+    "occurred_at": "2026-10-03T01:09:54.495Z",
+    "version": 1,
+    "summary": "派生文件（access_proxy）：f-1986-07-access.mp3 ← f-1986-07-denoise.wav",
+    "actor": {
+      "id": "u-qian",
+      "role": "digitization_tech",
+      "name": "钱技术"
+    },
+    "payload": {
+      "source_file_id": "f-1986-07-denoise.wav",
+      "kind": "access_proxy",
+      "process": "mp3-128k 公开访问代理",
+      "carrier_id": "tape-1986-kanglian-07",
+      "codec": "mp3",
+      "byte_size": 28800000,
+      "checksums": [
+        {
+          "algorithm": "sha512",
+          "value": "f0e1d2c3b4a5968778695a4b3c2d1e0ff0e1d2c3b4a5968778695a4b3c2d1e0ff0e1d2c3b4a5968778695a4b3c2d1e0ff0e1d2c3b4a5968778695a4b3c2d1e0f"
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt-person-hengshan",
+    "event_type": "PERSON_REGISTERED",
+    "aggregate_type": "person",
+    "aggregate_id": "p-li-hengshan",
+    "occurred_at": "2026-10-03T01:09:54.495Z",
+    "version": 1,
+    "summary": "登记人物：李恒山",
+    "actor": {
+      "id": "u-zhao",
+      "role": "cataloger",
+      "name": "赵编目"
+    },
+    "payload": {
+      "display_name": "李恒山",
+      "visibility": "public",
+      "note": null,
+      "roles": [
+        "narrator",
+        "donor"
+      ]
+    }
+  },
+  {
+    "event_id": "evt-alias-hengshan",
+    "event_type": "PERSON_ALIAS_NOTED",
+    "aggregate_type": "person",
+    "aggregate_id": "p-li-hengshan",
+    "occurred_at": "2026-10-03T01:09:54.496Z",
+    "version": 2,
+    "summary": "记录旧称/别名：李恒三 → p-li-hengshan",
+    "actor": {
+      "id": "u-zhao",
+      "role": "cataloger",
+      "name": "赵编目"
+    },
+    "payload": {
+      "alias": "李恒三",
+      "period": "1940年代户籍曾用名",
+      "note": "旧档案中偶见，非另一人"
+    }
+  },
+  {
+    "event_id": "evt-person-liheng",
+    "event_type": "PERSON_REGISTERED",
+    "aggregate_type": "person",
+    "aggregate_id": "p-li-heng",
+    "occurred_at": "2026-10-03T01:09:54.496Z",
+    "version": 1,
+    "summary": "登记人物：李衡",
+    "actor": {
+      "id": "u-zhao",
+      "role": "cataloger",
+      "name": "赵编目"
+    },
+    "payload": {
+      "display_name": "李衡",
+      "visibility": "public",
+      "note": "另一抗联人物，旧转录将本盘讲述者误作此人",
+      "roles": [
+        "historical_figure"
+      ]
+    }
+  },
+  {
+    "event_id": "evt-person-family",
+    "event_type": "PERSON_REGISTERED",
+    "aggregate_type": "person",
+    "aggregate_id": "p-zhang-family",
+    "occurred_at": "2026-10-03T01:09:54.496Z",
+    "version": 1,
+    "summary": "登记人物：张某家属（背景声）",
+    "actor": {
+      "id": "u-zhao",
+      "role": "cataloger",
+      "name": "赵编目"
+    },
+    "payload": {
+      "display_name": "张某家属（背景声）",
+      "visibility": "private",
+      "note": null,
+      "roles": []
+    }
+  },
+  {
+    "event_id": "evt-seg-01",
+    "event_type": "SEGMENT_CUT",
+    "aggregate_type": "audio_segment",
+    "aggregate_id": "seg-07-01",
+    "occurred_at": "2026-10-03T01:09:54.496Z",
+    "version": 1,
+    "summary": "声道/时间切分：seg-07-01",
+    "actor": {
+      "id": "u-zhao",
+      "role": "cataloger",
+      "name": "赵编目"
+    },
+    "payload": {
+      "carrier_id": "tape-1986-kanglian-07",
+      "source_file_id": "f-1986-07-original.wav",
+      "time_range": {
+        "start_ms": 0,
+        "end_ms": 300000
+      },
+      "channel": "L",
+      "topics": [
+        "野营密营",
+        "抗联歌曲"
+      ],
+      "people_mentioned": [],
+      "song_ids": [
+        "song-luying"
+      ]
+    }
+  },
+  {
+    "event_id": "evt-seg-02",
+    "event_type": "SEGMENT_CUT",
+    "aggregate_type": "audio_segment",
+    "aggregate_id": "seg-07-02",
+    "occurred_at": "2026-10-03T01:09:54.496Z",
+    "version": 1,
+    "summary": "声道/时间切分：seg-07-02",
+    "actor": {
+      "id": "u-zhao",
+      "role": "cataloger",
+      "name": "赵编目"
+    },
+    "payload": {
+      "carrier_id": "tape-1986-kanglian-07",
+      "source_file_id": "f-1986-07-original.wav",
+      "time_range": {
+        "start_ms": 300000,
+        "end_ms": 900000
+      },
+      "channel": "L",
+      "topics": [
+        "西征",
+        "依兰"
+      ],
+      "people_mentioned": [
+        {
+          "person_id": "p-li-hengshan"
+        }
+      ],
+      "song_ids": []
+    }
+  },
+  {
+    "event_id": "evt-seg-03",
+    "event_type": "SEGMENT_CUT",
+    "aggregate_type": "audio_segment",
+    "aggregate_id": "seg-07-03",
+    "occurred_at": "2026-10-03T01:09:54.496Z",
+    "version": 1,
+    "summary": "声道/时间切分：seg-07-03",
+    "actor": {
+      "id": "u-zhao",
+      "role": "cataloger",
+      "name": "赵编目"
+    },
+    "payload": {
+      "carrier_id": "tape-1986-kanglian-07",
+      "source_file_id": "f-1986-07-original.wav",
+      "time_range": {
+        "start_ms": 900000,
+        "end_ms": 1200000
+      },
+      "channel": "R",
+      "topics": [
+        "背景谈话",
+        "家事"
+      ],
+      "people_mentioned": [
+        {
+          "person_id": "p-zhang-family",
+          "relationship": "背景第三人"
+        }
+      ],
+      "song_ids": []
+    }
+  },
+  {
+    "event_id": "evt-seg-04",
+    "event_type": "SEGMENT_CUT",
+    "aggregate_type": "audio_segment",
+    "aggregate_id": "seg-07-04",
+    "occurred_at": "2026-10-03T01:09:54.496Z",
+    "version": 1,
+    "summary": "声道/时间切分：seg-07-04",
+    "actor": {
+      "id": "u-zhao",
+      "role": "cataloger",
+      "name": "赵编目"
+    },
+    "payload": {
+      "carrier_id": "tape-1986-kanglian-07",
+      "source_file_id": "f-1986-07-original.wav",
+      "time_range": {
+        "start_ms": 1200000,
+        "end_ms": 1500000
+      },
+      "channel": "mixed",
+      "topics": [
+        "在台亲属"
+      ],
+      "people_mentioned": [],
+      "song_ids": []
+    }
+  },
+  {
+    "event_id": "evt-seg-05",
+    "event_type": "SEGMENT_CUT",
+    "aggregate_type": "audio_segment",
+    "aggregate_id": "seg-07-05",
+    "occurred_at": "2026-10-03T01:09:54.496Z",
+    "version": 1,
+    "summary": "声道/时间切分：seg-07-05",
+    "actor": {
+      "id": "u-zhao",
+      "role": "cataloger",
+      "name": "赵编目"
+    },
+    "payload": {
+      "carrier_id": "tape-1986-kanglian-07",
+      "source_file_id": "f-1986-07-original.wav",
+      "time_range": {
+        "start_ms": 1500000,
+        "end_ms": 1700000
+      },
+      "channel": "mixed",
+      "topics": [
+        "战友殉难"
+      ],
+      "people_mentioned": [],
+      "song_ids": []
+    }
+  },
+  {
+    "event_id": "evt-seg-06",
+    "event_type": "SEGMENT_CUT",
+    "aggregate_type": "audio_segment",
+    "aggregate_id": "seg-07-06",
+    "occurred_at": "2026-10-03T01:09:54.496Z",
+    "version": 1,
+    "summary": "声道/时间切分：seg-07-06",
+    "actor": {
+      "id": "u-zhao",
+      "role": "cataloger",
+      "name": "赵编目"
+    },
+    "payload": {
+      "carrier_id": "tape-1986-kanglian-07",
+      "source_file_id": "f-1986-07-original.wav",
+      "time_range": {
+        "start_ms": 1700000,
+        "end_ms": 1800000
+      },
+      "channel": "mixed",
+      "topics": [
+        "未编竣"
+      ],
+      "people_mentioned": [],
+      "song_ids": []
+    }
+  },
+  {
+    "event_id": "evt-song-01",
+    "event_type": "SONG_RIGHTS_ASSESSED",
+    "aggregate_type": "song_rights",
+    "aggregate_id": "song-luying",
+    "occurred_at": "2026-10-03T01:09:54.496Z",
+    "version": 1,
+    "summary": "歌曲权利评估：露营之歌（public_domain）",
+    "actor": {
+      "id": "u-li",
+      "role": "rights_officer",
+      "name": "李权利"
+    },
+    "payload": {
+      "title": "露营之歌",
+      "work_status": "public_domain",
+      "license": null,
+      "rights_holders_note": "抗联集体创作，词作者均已逝世逾五十年",
+      "segment_ids": [
+        "seg-07-01"
+      ],
+      "basis": "版权处 2026 年第 118 号查核意见"
+    }
+  },
+  {
+    "event_id": "evt-tr-01-v1",
+    "event_type": "TRANSCRIPT_DRAFTED",
+    "aggregate_type": "transcript_revision",
+    "aggregate_id": "tr-seg-07-01",
+    "occurred_at": "2026-10-03T01:09:54.496Z",
+    "version": 1,
+    "summary": "逐字稿初稿：seg-07-01",
+    "actor": {
+      "id": "u-zhao",
+      "role": "cataloger",
+      "name": "赵编目"
+    },
+    "payload": {
+      "segment_id": "seg-07-01",
+      "text": "一九三七年冬天，我们在林海雪原里头扎营，唱起《露营之歌》：火烤胸前暖，风吹背后寒。",
+      "corrections": []
+    }
+  },
+  {
+    "event_id": "evt-tr-02-v1",
+    "event_type": "TRANSCRIPT_DRAFTED",
+    "aggregate_type": "transcript_revision",
+    "aggregate_id": "tr-seg-07-02",
+    "occurred_at": "2026-10-03T01:09:54.496Z",
+    "version": 1,
+    "summary": "逐字稿初稿：seg-07-02",
+    "actor": {
+      "id": "u-zhao",
+      "role": "cataloger",
+      "name": "赵编目"
+    },
+    "payload": {
+      "segment_id": "seg-07-02",
+      "text": "说话人李衡回忆：民国二十五年，我们队伍在依兰一带西征，雪没过大腿根。",
+      "corrections": []
+    }
+  },
+  {
+    "event_id": "evt-tr-03-v1",
+    "event_type": "TRANSCRIPT_DRAFTED",
+    "aggregate_type": "transcript_revision",
+    "aggregate_id": "tr-seg-07-03",
+    "occurred_at": "2026-10-03T01:09:54.496Z",
+    "version": 1,
+    "summary": "逐字稿初稿：seg-07-03",
+    "actor": {
+      "id": "u-zhao",
+      "role": "cataloger",
+      "name": "赵编目"
+    },
+    "payload": {
+      "segment_id": "seg-07-03",
+      "text": "（背景声，右声道）张家儿媳在灶屋跟人说，家里那三亩好地民国二十三年分到家，这话本不是讲给采访者的。",
+      "corrections": []
+    }
+  },
+  {
+    "event_id": "evt-tr-04-v1",
+    "event_type": "TRANSCRIPT_DRAFTED",
+    "aggregate_type": "transcript_revision",
+    "aggregate_id": "tr-seg-07-04",
+    "occurred_at": "2026-10-03T01:09:54.496Z",
+    "version": 1,
+    "summary": "逐字稿初稿：seg-07-04",
+    "actor": {
+      "id": "u-zhao",
+      "role": "cataloger",
+      "name": "赵编目"
+    },
+    "payload": {
+      "segment_id": "seg-07-04",
+      "text": "我有个弟弟跟着退到台湾，这些年……（此处暂缓）",
+      "corrections": []
+    }
+  },
+  {
+    "event_id": "evt-tr-05-v1",
+    "event_type": "TRANSCRIPT_DRAFTED",
+    "aggregate_type": "transcript_revision",
+    "aggregate_id": "tr-seg-07-05",
+    "occurred_at": "2026-10-03T01:09:54.496Z",
+    "version": 1,
+    "summary": "逐字稿初稿：seg-07-05",
+    "actor": {
+      "id": "u-zhao",
+      "role": "cataloger",
+      "name": "赵编目"
+    },
+    "payload": {
+      "segment_id": "seg-07-05",
+      "text": "那一年西征，一排的同志都牺牲在山前，名字我一个个都记得。",
+      "corrections": []
+    }
+  },
+  {
+    "event_id": "evt-spk-prop-1",
+    "event_type": "SPEAKERS_PROPOSED",
+    "aggregate_type": "audio_segment",
+    "aggregate_id": "seg-07-02",
+    "occurred_at": "2026-10-03T01:09:54.496Z",
+    "version": 2,
+    "summary": "提出说话人候选：seg-07-02",
+    "actor": {
+      "id": "u-zhao",
+      "role": "cataloger",
+      "name": "赵编目"
+    },
+    "payload": {
+      "action": "add",
+      "candidates": [
+        {
+          "candidate_id": "cand-02-liheng",
+          "person_id": "p-li-heng",
+          "proposed_name": "李衡",
+          "basis": "语音转写自动对齐旧档案",
+          "confidence": 0.42,
+          "disputed": true,
+          "note": "自动转写所得，与捐赠人姓名不符，存疑"
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt-spk-prop-2",
+    "event_type": "SPEAKERS_PROPOSED",
+    "aggregate_type": "audio_segment",
+    "aggregate_id": "seg-07-02",
+    "occurred_at": "2026-10-03T01:09:54.496Z",
+    "version": 3,
+    "summary": "提出说话人候选：seg-07-02",
+    "actor": {
+      "id": "u-sun",
+      "role": "reviewer",
+      "name": "孙校订"
+    },
+    "payload": {
+      "action": "add",
+      "candidates": [
+        {
+          "candidate_id": "cand-02-hengshan",
+          "person_id": "p-li-hengshan",
+          "basis": "捐赠协议签名与磁带封面题字",
+          "confidence": 0.8,
+          "note": "尚待亲属听辨确认"
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt-note-descendant",
+    "event_type": "REVIEW_NOTE_ADDED",
+    "aggregate_type": "review_note",
+    "aggregate_id": "rn-seg-07-02-001",
+    "occurred_at": "2026-10-03T01:09:54.496Z",
+    "version": 1,
+    "summary": "校订意见：seg-07-02（identity）",
+    "actor": {
+      "id": "u-sun",
+      "role": "reviewer",
+      "name": "孙校订"
+    },
+    "payload": {
+      "segment_id": "seg-07-02",
+      "category": "identity",
+      "note": "中国记忆网页听众李援朝（李恒山之子）来电：录音是其父李恒山，逐字稿误作李衡，要求核正。",
+      "transcript_version": 1,
+      "resolution": null
+    }
+  },
+  {
+    "event_id": "evt-note-register",
+    "event_type": "REVIEW_NOTE_ADDED",
+    "aggregate_type": "review_note",
+    "aggregate_id": "rn-seg-07-02-002",
+    "occurred_at": "2026-10-03T01:09:54.497Z",
+    "version": 1,
+    "summary": "校订意见：seg-07-02（identity）",
+    "actor": {
+      "id": "u-zhao",
+      "role": "cataloger",
+      "name": "赵编目"
+    },
+    "payload": {
+      "segment_id": "seg-07-02",
+      "category": "identity",
+      "note": "比对 1986 年采访登记本，当日受访人确为李恒山；李衡当时在另一驻地，不可能在录音中。",
+      "transcript_version": 1,
+      "resolution": null
+    }
+  },
+  {
+    "event_id": "evt-tr-02-v2",
+    "event_type": "TRANSCRIPT_REVISED",
+    "aggregate_type": "transcript_revision",
+    "aggregate_id": "tr-seg-07-02",
+    "occurred_at": "2026-10-03T01:09:54.497Z",
+    "version": 2,
+    "summary": "逐字稿校订 v2：seg-07-02（据后代辨听与采访登记本，更正讲述者误名；纪年纪元改为公元）",
+    "actor": {
+      "id": "u-sun",
+      "role": "reviewer",
+      "name": "孙校订"
+    },
+    "payload": {
+      "segment_id": "seg-07-02",
+      "text": "说话人李恒山回忆：一九三六年，我们队伍在依兰一带西征，雪没过大腿根。",
+      "based_on_version": 1,
+      "change_summary": "据后代辨听与采访登记本，更正讲述者误名；纪年纪元改为公元",
+      "corrections": [
+        {
+          "type": "speaker_name",
+          "from": "李衡",
+          "to": "李恒山",
+          "reason": "旧转录同音误作另一人；经捐赠协议、采访登记本与亲属辨听三方证实",
+          "evidence_event_ids": [
+            "evt-note-descendant",
+            "evt-note-register"
+          ]
+        },
+        {
+          "type": "dating",
+          "from": "民国二十五年",
+          "to": "一九三六年",
+          "reason": "公元纪年便于读者检索"
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt-spk-withdraw-liheng",
+    "event_type": "SPEAKERS_PROPOSED",
+    "aggregate_type": "audio_segment",
+    "aggregate_id": "seg-07-02",
+    "occurred_at": "2026-10-03T01:09:54.497Z",
+    "version": 4,
+    "summary": "撤回说话人候选：seg-07-02",
+    "actor": {
+      "id": "u-sun",
+      "role": "reviewer",
+      "name": "孙校订"
+    },
+    "payload": {
+      "action": "withdraw",
+      "candidates": [
+        {
+          "candidate_id": "cand-02-liheng",
+          "note": "经核正为误录，撤回该候选"
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt-spk-confirm",
+    "event_type": "SPEAKER_CONFIRMED",
+    "aggregate_type": "audio_segment",
+    "aggregate_id": "seg-07-02",
+    "occurred_at": "2026-10-03T01:09:54.497Z",
+    "version": 5,
+    "summary": "确认说话人：seg-07-02 ← 候选 cand-02-hengshan",
+    "actor": {
+      "id": "u-sun",
+      "role": "reviewer",
+      "name": "孙校订"
+    },
+    "payload": {
+      "candidate_id": "cand-02-hengshan",
+      "person_id": "p-li-hengshan",
+      "evidence": [
+        "捐赠字第1986-07号签名",
+        "1986年采访登记本",
+        "亲属李援朝辨听（evt-note-descendant）"
+      ],
+      "note": "争议已据三方依据解决",
+      "dispute_resolved": true,
+      "force_reconfirm": false
+    }
+  },
+  {
+    "event_id": "evt-rel-01",
+    "event_type": "RELEASE_APPROVED",
+    "aggregate_type": "release_decision",
+    "aggregate_id": "rd-seg-07-01",
+    "occurred_at": "2026-10-03T01:09:54.497Z",
+    "version": 1,
+    "summary": "开放决定：seg-07-01 → open",
+    "actor": {
+      "id": "u-zheng",
+      "role": "release_officer",
+      "name": "郑开放"
+    },
+    "payload": {
+      "segment_id": "seg-07-01",
+      "disposition": "open",
+      "bases": [
+        "donor_consent"
+      ],
+      "masking": null,
+      "rationale": "捐赠协议同意开放，歌曲已属公有领域",
+      "review_after": null
+    }
+  },
+  {
+    "event_id": "evt-rel-02",
+    "event_type": "RELEASE_APPROVED",
+    "aggregate_type": "release_decision",
+    "aggregate_id": "rd-seg-07-02",
+    "occurred_at": "2026-10-03T01:09:54.497Z",
+    "version": 1,
+    "summary": "开放决定：seg-07-02 → open",
+    "actor": {
+      "id": "u-zheng",
+      "role": "release_officer",
+      "name": "郑开放"
+    },
+    "payload": {
+      "segment_id": "seg-07-02",
+      "disposition": "open",
+      "bases": [
+        "donor_consent"
+      ],
+      "masking": null,
+      "rationale": "讲述者本人捐赠；核正后开放",
+      "review_after": null
+    }
+  },
+  {
+    "event_id": "evt-rel-03",
+    "event_type": "RELEASE_APPROVED",
+    "aggregate_type": "release_decision",
+    "aggregate_id": "rd-seg-07-03",
+    "occurred_at": "2026-10-03T01:09:54.497Z",
+    "version": 1,
+    "summary": "开放决定：seg-07-03 → masked",
+    "actor": {
+      "id": "u-zheng",
+      "role": "release_officer",
+      "name": "郑开放"
+    },
+    "payload": {
+      "segment_id": "seg-07-03",
+      "disposition": "masked",
+      "bases": [
+        "family_privacy"
+      ],
+      "masking": {
+        "audio_muted_ranges": [
+          {
+            "start_ms": 912000,
+            "end_ms": 970000,
+            "note": "第三人可辨认语音段静音"
+          }
+        ],
+        "redact_spans": [
+          {
+            "start_offset": 9,
+            "end_offset": 36,
+            "reason": "第三人及其家事信息"
+          }
+        ]
+      },
+      "rationale": "背景声中第三人的家事非受访内容，依个人信息保护遮蔽其可识别部分",
+      "review_after": null
+    }
+  },
+  {
+    "event_id": "evt-rel-04",
+    "event_type": "RELEASE_APPROVED",
+    "aggregate_type": "release_decision",
+    "aggregate_id": "rd-seg-07-04",
+    "occurred_at": "2026-10-03T01:09:54.497Z",
+    "version": 1,
+    "summary": "开放决定：seg-07-04 → withheld",
+    "actor": {
+      "id": "u-zheng",
+      "role": "release_officer",
+      "name": "郑开放"
+    },
+    "payload": {
+      "segment_id": "seg-07-04",
+      "disposition": "withheld",
+      "bases": [
+        "donation_restriction"
+      ],
+      "masking": null,
+      "rationale": "捐赠人书面要求涉及在台亲属内容三十年内暂缓（至2036年）",
+      "review_after": null
+    }
+  },
+  {
+    "event_id": "evt-rel-05",
+    "event_type": "RELEASE_APPROVED",
+    "aggregate_type": "release_decision",
+    "aggregate_id": "rd-seg-07-05",
+    "occurred_at": "2026-10-03T01:09:54.497Z",
+    "version": 1,
+    "summary": "开放决定：seg-07-05 → withheld",
+    "actor": {
+      "id": "u-zheng",
+      "role": "release_officer",
+      "name": "郑开放"
+    },
+    "payload": {
+      "segment_id": "seg-07-05",
+      "disposition": "withheld",
+      "bases": [
+        "memorial_sensitivity"
+      ],
+      "masking": null,
+      "rationale": "殉难者名单涉及烈士亲属纪念敏感期，暂缓至纪念活动结束后复核",
+      "review_after": "2027-09-01T00:00:00+08:00"
+    }
+  }
+]
