@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "抗联录音开放编目领域事件",
+  "description": "事件信封约定保持向后兼容：event_type 与 aggregate_type 只在初始版本之上做超集扩充，既有的 CARRIER_ACCESSIONED / DIGITIZATION_VERIFIED / SPEAKER_ANNOTATED / RELEASE_APPROVED / SEGMENT_WITHDRAWN 与 physical_carrier / audio_segment / transcript_revision / release_decision 仍然有效，不得删除或改名。",
   "type": "object",
   "required": [
     "event_id",
@@ -20,18 +21,39 @@
       "type": "string",
       "enum": [
         "CARRIER_ACCESSIONED",
+        "DONATION_AGREEMENT_RECORDED",
+        "CUSTODY_RECORDED",
+        "DIGITIZATION_BATCH_RECORDED",
+        "MASTER_FILE_RECORDED",
         "DIGITIZATION_VERIFIED",
+        "SEGMENT_DEFINED",
+        "PERSON_RECORDED",
         "SPEAKER_ANNOTATED",
+        "SPEAKER_CANDIDATE_PROPOSED",
+        "SPEAKER_CANDIDATE_RESOLVED",
+        "TRANSCRIPT_RECORDED",
+        "TRANSCRIPT_CORRECTED",
+        "REVIEW_NOTE_ADDED",
+        "SONG_RIGHTS_RECORDED",
+        "RELEASE_DECIDED",
         "RELEASE_APPROVED",
-        "SEGMENT_WITHDRAWN"
+        "SEGMENT_WITHDRAWN",
+        "SEGMENT_RESTORED"
       ]
     },
     "aggregate_type": {
       "type": "string",
       "enum": [
         "physical_carrier",
+        "donation_agreement",
+        "digitization_batch",
+        "media_file",
         "audio_segment",
+        "person",
+        "speaker_identity",
         "transcript_revision",
+        "review_note",
+        "song_rights",
         "release_decision"
       ]
     },
@@ -47,10 +69,61 @@
       "type": "integer",
       "minimum": 1
     },
+    "actor": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
     "summary": {
       "type": "string",
       "minLength": 1
+    },
+    "payload": {
+      "type": "object",
+      "additionalProperties": true
     }
   },
-  "additionalProperties": true
+  "additionalProperties": true,
+  "$defs": {
+    "event_type_note": {
+      "$comment": "初始五事件语义：CARRIER_ACCESSIONED=载体入藏；DIGITIZATION_VERIFIED=数字化校验通过（校验值比对）；SPEAKER_ANNOTATED=说话人标注（候选身份）；RELEASE_APPROVED=公开批准（等价 action=open 的开放决定）；SEGMENT_WITHDRAWN=片段临时下架，仅影响该片段及其衍生文件。"
+    },
+    "basis": {
+      "enum": [
+        "memorial_sensitivity",
+        "kin_privacy",
+        "donor_restriction",
+        "rights_clearance",
+        "public_interest"
+      ],
+      "$comment": "开放决定的依据各自独立：纪念敏感期、亲属隐私、捐赠限制、歌曲/著作权清算、公共利益。"
+    },
+    "access_action": {
+      "enum": [
+        "open",
+        "masked",
+        "withheld"
+      ],
+      "$comment": "open=开放；masked=遮蔽开放（文字脱敏、音频区间消音，其余可访问）；withheld=暂缓/不开放。"
+    },
+    "file_role": {
+      "enum": [
+        "original_capture",
+        "preservation_master",
+        "denoised",
+        "access"
+      ],
+      "$comment": "降噪件（denoised）与访问件（access）都是派生版本，必须经 derived_from 指明来源，不得充当原始采集。"
+    }
+  }
 }
